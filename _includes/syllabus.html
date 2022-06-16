@@ -8,7 +8,7 @@
 {% include manual_episode_order.html %}
 
 <div class="syllabus">
-  <h2 id="schedule">Schedule</h2>
+  <h2 id="schedule">Workshop Content </h2>
 
   {% assign lesson_number = 0 %}
   {% assign day = 0 %}
@@ -24,11 +24,14 @@
   {% assign current = site.start_time %}
 
   <table class="table table-striped">
+  <th> Time Estimate </th>
+  <th> Section </th>
+  <th> Keypoints </th>
   <tr>
     {% if multiday %}<td class="col-md-1"></td>{% endif %}
-    <td class="{% if multiday %}col-md-1{% else %}col-md-2{% endif %}"></td>
-    <td class="col-md-3"><a href="{{ relative_root_path }}{% link setup.md %}">Setup</a></td>
-    <td class="col-md-7">Download files required for the lesson</td>
+    <td class="{% if multiday %}col-md-1{% else %}col-md-2{% endif %}">Pre-Workshop</td>
+    <td class="col-md-3"><a href="{{ relative_root_path }}/setup">Setup</a></td>
+    <td class="col-md-7">Install required software and download files required for the lesson</td>
   </tr>
   {% if site.instructor_training %}
   <tr>
@@ -53,7 +56,7 @@
           {% if multiday %}<td class="col-md-1"></td>{% endif %}
           <td class="{% if multiday %}col-md-1{% else %}col-md-2{% endif %}">{% if hours < 10 %}0{% endif %}{{ hours }}:{% if minutes < 10 %}0{% endif %}{{ minutes }}</td>
           <td class="col-md-3">Finish</td>
-          <td class="col-md-7"></td>
+          <td class="col-md-7">Please fill out the workshop survey</td>
         </tr>
       {% endif %}
       {% assign current = site.start_time %} {% comment %}Re-set start time of this episode to general daily start time {% endcomment %}
@@ -101,7 +104,7 @@
     {% if multiday %}<td class="col-md-1"></td>{% endif %}
     <td class="{% if multiday %}col-md-1{% else %}col-md-2{% endif %}">{% if hours < 10 %}0{% endif %}{{ hours }}:{% if minutes < 10 %}0{% endif %}{{ minutes }}</td>
     <td class="col-md-3">Finish</td>
-    <td class="col-md-7"></td>
+    <td class="col-md-7">Please fill out the workshop survey </td>
   </tr>
   </table>
 
@@ -110,3 +113,4 @@
   </p>
 
 </div>
+
